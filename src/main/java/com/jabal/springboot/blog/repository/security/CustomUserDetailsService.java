@@ -1,4 +1,4 @@
-package com.jabal.springboot.blog.security;
+package com.jabal.springboot.blog.repository.security;
 
 import com.jabal.springboot.blog.entity.Role;
 import com.jabal.springboot.blog.entity.User;
