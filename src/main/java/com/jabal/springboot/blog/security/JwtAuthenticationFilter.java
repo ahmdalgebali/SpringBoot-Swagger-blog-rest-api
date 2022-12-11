@@ -1,4 +1,4 @@
-package com.jabal.springboot.blog.repository.security;
+package com.jabal.springboot.blog.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

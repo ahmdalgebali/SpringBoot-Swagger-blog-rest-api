@@ -7,7 +7,7 @@ import com.jabal.springboot.blog.payload.LoginDto;
 import com.jabal.springboot.blog.payload.SignUpDto;
 import com.jabal.springboot.blog.repository.RoleRepository;
 import com.jabal.springboot.blog.repository.UserRepository;
-import com.jabal.springboot.blog.repository.security.JwtTokenProvider;
+import com.jabal.springboot.blog.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

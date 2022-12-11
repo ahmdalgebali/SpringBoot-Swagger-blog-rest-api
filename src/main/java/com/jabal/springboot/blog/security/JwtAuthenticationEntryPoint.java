@@ -1,4 +1,4 @@
-package com.jabal.springboot.blog.repository.security;
+package com.jabal.springboot.blog.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

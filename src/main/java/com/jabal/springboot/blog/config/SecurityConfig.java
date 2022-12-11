@@ -1,8 +1,8 @@
 package com.jabal.springboot.blog.config;
 
-import com.jabal.springboot.blog.repository.security.CustomUserDetailsService;
-import com.jabal.springboot.blog.repository.security.JwtAuthenticationEntryPoint;
-import com.jabal.springboot.blog.repository.security.JwtAuthenticationFilter;
+import com.jabal.springboot.blog.security.CustomUserDetailsService;
+import com.jabal.springboot.blog.security.JwtAuthenticationEntryPoint;
+import com.jabal.springboot.blog.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,12 +14,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
@@ -56,6 +52,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/api/v1/**").permitAll()
                 .antMatchers("/api/v1/auth/**").permitAll()
+                .antMatchers("/v3/api-docs/**").permitAll()
+                .antMatchers("/swagger-ui/**").permitAll()
+                .antMatchers("/swagger-resources/**").permitAll()
+                .antMatchers("/swagger-ui.html").permitAll()
+                .antMatchers("/webjars/**").permitAll()
                 .anyRequest()
                 .authenticated();
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

@@ -1,4 +1,4 @@
-package com.jabal.springboot.blog.repository.security;
+package com.jabal.springboot.blog.security;
 
 import com.jabal.springboot.blog.exception.BlogAPIException;
 import io.jsonwebtoken.*;
